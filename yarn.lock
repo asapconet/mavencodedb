@@ -559,6 +559,27 @@
     "@types/conventional-commits-parser" "^5.0.0"
     chalk "^5.3.0"
 
+"@coreui/chartjs@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@coreui/chartjs/-/chartjs-4.0.0.tgz#e8e720a05a74e454e47e2ef34848868123181a01"
+  integrity sha512-gPxmqj6hpC/erZBfyKQ+axWKr1gY4yhj8Dm3WkBp8SG2lUs0lEAQy3XGmmM/42TBTylbq5V4P6jfqim3N0mKmw==
+  dependencies:
+    "@coreui/coreui" "^5.0.0"
+    chart.js "^4.4.2"
+
+"@coreui/coreui@^5.0.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@coreui/coreui/-/coreui-5.2.0.tgz#708f236dc2985daad6ebac06c09d481e5c6ccff5"
+  integrity sha512-DZLWzPIZP3KTNgcaRXny/7lcQm0rDMrheu3VsWpgbln5rUuJwxdopwhTSnOryVyCwjlDbs3Z8ZfIzOeBXNC4GA==
+
+"@coreui/react-chartjs@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@coreui/react-chartjs/-/react-chartjs-3.0.0.tgz#f2655df6575076dfb614e15ba686d5c2c49ab86c"
+  integrity sha512-65FAxHHwfMp3HY2yej7a0sLgkQJ49v9oPisuwvShrHOo0cuFVaUGKSa1V+M13W/oKsS6AWEFUooAZdsz/WZrAg==
+  dependencies:
+    "@coreui/chartjs" "^4.0.0"
+    chart.js "^4.4.2"
+
 "@esbuild/aix-ppc64@0.21.5":
   version "0.21.5"
   resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz#c7184a326533fcdf1b8ee0733e21c713b975575f"
@@ -852,6 +873,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
+
+"@kurkle/color@^0.3.0":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.3.2.tgz#5acd38242e8bde4f9986e7913c8fdf49d3aa199f"
+  integrity sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1466,6 +1492,13 @@ chalk@^5.3.0, chalk@~5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
   integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==
+
+chart.js@^4.4.2:
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.4.6.tgz#da39b84ca752298270d4c0519675c7659936abec"
+  integrity sha512-8Y406zevUPbbIBA/HRk33khEmQPk5+cxeflWE/2rx1NJsjVWMPw/9mSP9rxHP5eqi6LNoPBVMfZHxbwLSgldYA==
+  dependencies:
+    "@kurkle/color" "^0.3.0"
 
 chokidar@^3.5.3:
   version "3.5.3"
