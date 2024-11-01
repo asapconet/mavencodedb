@@ -8,7 +8,7 @@ export const NutPieChart: React.FC<chartProps> = ({
   backgroundColor,
 }) => {
   return (
-    <div className="h-full p-4 flex justify-center">
+    <div className="h-full p-4 flex justify-center text-blue-400">
       <CChart
         type={type}
         data={{
@@ -27,6 +27,10 @@ export const NutPieChart: React.FC<chartProps> = ({
             legend: {
               display: false,
             },
+          },
+          scales: {
+            x: { display: false },
+            y: { display: false },
           },
         }}
         style={{ width: "100%", height: "100%" }}

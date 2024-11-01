@@ -10,7 +10,7 @@ export const Header = () => {
         </span>
         <span> tabler</span>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="hidden md:flex items-center gap-4">
         <span className="border-pri border-2 py-1 px-2 text-md rounded-sm font-semibold text-pri cursor-pointer">
           {" "}
           Source code

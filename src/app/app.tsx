@@ -12,7 +12,7 @@ function App() {
           <p className="text-3xl font-semibold capitalize text-neu-2 py-6">
             dashboard
           </p>
-          <div className="grid grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {cardData.map((data, index) => (
               <Card
                 key={index}
@@ -23,7 +23,7 @@ function App() {
             ))}
           </div>
         </div>
-        <div className="flex gap-8 min-h-96 px-4 lg:px-16 mt-8">
+        <div className="grid lg:grid-cols-2 gap-8 min-h-96 px-4 lg:px-16 mt-8">
           <DevActivities />
           <SubCharts />
         </div>
