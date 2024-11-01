@@ -1,9 +1,11 @@
-import { Header } from "components/molecules/header";
+import { DashboardLayout } from "../layouts/dashboardLayout";
 
 function App() {
   return (
     <main>
-      <Header/>
+      <DashboardLayout>
+        <div className="px-4 lg:px-16">my app here</div>
+      </DashboardLayout>
     </main>
   );
 }

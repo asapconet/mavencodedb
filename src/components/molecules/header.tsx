@@ -3,7 +3,7 @@ import { RxAvatar } from "react-icons/rx";
 
 export const Header = () => {
   return (
-    <header className="flex items-center justify-between h-20 border-b border-[1px] border-gray-200 px-4 lg:px-16">
+    <header className="flex items-center justify-between h-20 border-b border-[1.5px] border-gray-200 px-4 lg:px-16">
       <div className="text-2xl font-semibold">
         <span className="p-2 rounded-xl text-center text-white bg-pri">
           &gt;_

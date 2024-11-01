@@ -17,7 +17,7 @@
   }
 
   main {
-    @apply px-4 min-h-screen sm:px-0 space-y-16 w-full;
+    @apply min-h-screen w-full;
 
     -webkit-animation: slide 2s linear infinite;
     animation: slide 4s linear infinite;
