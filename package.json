@@ -1,18 +1,9 @@
 {
-  "name": "vital",
+  "name": "mavencodebd",
   "type": "module",
   "version": "1.0.0",
-  "description": "Starter template for Vite with React (TypeScript). Supports Tailwind. Vitest and @react/testing-library configured and ready to go. Also ESLint, Prettier, Husky, Commit-lint and Atomic Design for components.",
-  "homepage": "https://github.com/jvidalv/vital#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jvidalv/vital.git"
-  },
-  "author": "Josep Vidal <josepvidalvidal@gmail.com>",
+  "author": "@asapconet",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jvidalv/vital/issues"
-  },
   "keywords": [
     "react",
     "vite",
@@ -42,6 +33,7 @@
     "@heroicons/react": "2.1.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-icons": "^5.3.0",
     "sass": "^1.80.5"
   },
   "devDependencies": {

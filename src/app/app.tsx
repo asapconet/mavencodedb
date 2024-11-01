@@ -1,7 +1,9 @@
+import { Header } from "components/molecules/header";
+
 function App() {
   return (
     <main>
-      <div className="text-3xl text-black text-center">My app here lets get it</div>
+      <Header/>
     </main>
   );
 }
