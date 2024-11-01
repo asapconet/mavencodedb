@@ -17,7 +17,7 @@
   }
 
   main {
-    @apply min-h-screen w-full;
+    @apply min-h-screen w-full bg-gray-100;
 
     -webkit-animation: slide 2s linear infinite;
     animation: slide 4s linear infinite;

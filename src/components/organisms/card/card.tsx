@@ -1,49 +1,41 @@
-import {
-  forwardRef,
-  ComponentProps,
-  RefAttributes,
-  ForwardRefExoticComponent,
-  SVGProps,
-} from "react";
+import { forwardRef } from "react";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
-export interface CardProps
-  extends Omit<ComponentProps<"div">, "className" | "children"> {
+export interface CardProps {
   title: string;
   description: string;
-  Icon: ForwardRefExoticComponent<
-    Omit<SVGProps<SVGSVGElement>, "ref"> & {
-      title?: string | undefined;
-      titleId?: string | undefined;
-    } & RefAttributes<SVGSVGElement>
-  >;
-  href: string;
+  growthRate: number;
+  className?: string;
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ title, description, Icon, href, ...rest }, ref) => {
+  ({ title, description, growthRate, className, ...rest }, ref) => {
+    const isPositiveGrowth = growthRate >= 0;
+
     return (
       <div
         ref={ref}
-        className="bg-white bg-opacity-5 rounded-md shadow p-4 relative overflow-hidden h-full"
+        className={`flex items-center justify-center bg-white rounded-sm border border-1
+        shadow p-4 relative overflow-hidden h-[205px] ${className}`}
         {...rest}
       >
-        <div>
-          <span className="absolute right-3 bottom-3 flex items-center justify-center rounded-md opacity-10">
-            <Icon className="h-12 w-12 text-white" aria-hidden="true" />
-          </span>
-        </div>
-        <div className="flex flex-col h-full">
-          <h3 className="text-2xl font-bold text-blue-500">{title}</h3>
-          <p className="mt-2 text-base text-gray-300 flex-1">{description}</p>
-          <div className="pt-6">
-            <a
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-white font-bold transition tracking-wide hover:text-blue-400"
-            >
-              Visit documentation →
-            </a>
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="font-bold text-5xl">{title}</h1>
+          <p className="mt-2 text-lg text-neu-2 text-semibold flex-1 capitalize">
+            {description}
+          </p>
+          <div
+            className={`${isPositiveGrowth ? "text-succ" : "text-err"} absolute top-2 right-2
+             flex items-center gap-1 font-semibold`}
+          >
+            <span>
+              {isPositiveGrowth ? "+" : "-"} {Math.abs(growthRate)}%
+            </span>
+            {isPositiveGrowth ? (
+              <FaAngleUp className="text-green-500" />
+            ) : (
+              <FaAngleDown className="text-err" />
+            )}
           </div>
         </div>
       </div>
