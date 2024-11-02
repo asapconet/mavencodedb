@@ -1,0 +1,80 @@
+import { useForm } from "react-hook-form";
+import { joiResolver } from "@hookform/resolvers/joi";
+import { useRecoilState } from "recoil";
+import { McButton } from "components/atoms/button/buttons";
+import McInput from "components/atoms/input/inputs";
+import { FaApple } from "react-icons/fa6";
+import { authState } from "components/atoms/recoil/login";
+import { LoginFormValues } from "../../types/auth";
+import { loginSchema } from "../../schemas/login";
+
+export const LoginForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormValues>({
+    resolver: joiResolver(loginSchema),
+  });
+  const [_, setAuth] = useRecoilState(authState);
+
+  console.log("all errors here!:", errors);
+  const onSubmit = (data: LoginFormValues) => {
+    const validUser =
+      data.email !== "" && data.password !== "";
+
+    console.log(data);
+    if (validUser) {
+      setAuth({
+        isAuthenticated: true,
+        user: { username: data.email },
+      });
+      console.log(data, "User logged in successfully!");
+    } else {
+      console.error("Invalid credentials");
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-4 w-full"
+    >
+      <McInput
+        name="email"
+        label="Username"
+        type="text"
+        placeholder="Enter username or email"
+        errors={errors.email}
+        register={register}
+      />
+      <McInput
+        name="password"
+        label="Password"
+        type="password"
+        placeholder="****"
+        errors={errors.password}
+        register={register}
+      />
+      <div className="flex justify-between items-center font-medium">
+        <label className="flex items-center gap-1">
+          <input type="checkbox" className="outline-none rounded-sm" />
+          Remember me
+        </label>
+        <p className="cursor-pointer">Forgot password?</p>
+      </div>
+      <McButton type="submit">Login</McButton>
+      <McButton
+        to="/register"
+        type="button"
+        className="flex gap-2 items-center justify-center"
+      >
+        <FaApple size={28} /> <p>Login with Apple</p>
+      </McButton>
+      <p className="text-center font-medium">
+        Don't have an account?{" "}
+        <span className="text-err cursor-pointer">Sign up for free</span>
+      </p>
+    </form>
+  );
+};
