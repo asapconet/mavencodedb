@@ -1,4 +1,5 @@
 import { LineChart } from "components/atoms/charts/lineChart";
+import { Tables } from "components/atoms/table";
 
 export const DevActivities = () => {
   return (
@@ -9,7 +10,9 @@ export const DevActivities = () => {
       <div className="h-[16rem] -m-[6px] mt-2">
         <LineChart />
       </div>
-      <div className="min-h-[10rem] ">chart space</div>
+      <div className="min-h-[10rem] ">
+        <Tables />
+      </div>
     </div>
   );
 };

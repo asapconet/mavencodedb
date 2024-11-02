@@ -16,7 +16,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={`flex items-center justify-center bg-white rounded-sm border border-1
-        cursor-pointer shadow p-4 relative overflow-hidden h-[205px] ${className}`}
+        cursor-pointer shadow p-4 relative overflow-hidden h-[205px] ${className}
+        transition delay-150 duration-100 ease-in-out`}
         {...rest}
       >
         <div className="flex flex-col items-center justify-center">

@@ -12,7 +12,7 @@ function App() {
           <p className="text-3xl font-semibold capitalize text-neu-2 py-6">
             dashboard
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
             {cardData.map((data, index) => (
               <Card
                 key={index}

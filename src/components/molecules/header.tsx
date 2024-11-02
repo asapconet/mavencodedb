@@ -1,5 +1,5 @@
 import { BsBell } from "react-icons/bs";
-import { RxAvatar } from "react-icons/rx";
+import { Avatar } from "@chakra-ui/react";
 
 export const Header = () => {
   return (
@@ -20,7 +20,10 @@ export const Header = () => {
           <BsBell size={20} className="cursor-pointer" />
         </span>
         <div className="flex items-center gap-2">
-          <RxAvatar size={48} className="text-gray-500 cursor-pointer" />
+          <Avatar.Root size="lg" mr={4}>
+            <Avatar.Image src="https://i.pravatar.cc/300?u=po" />
+            <Avatar.Fallback>JP</Avatar.Fallback>
+          </Avatar.Root>
           <span>
             <p className="font-semibold text-md text-neu-2">Jane Person</p>
             <p className="text-sm text-neu-1">Administrator</p>
