@@ -30,7 +30,7 @@ export const LoginForm = () => {
       await useTimer();
       login({ username: data.email, password: data.password });
       setLoading(false);
-      navigate("/dashboard");
+      navigate("/");
     } else {
       console.error("Invalid credentials");
     }
