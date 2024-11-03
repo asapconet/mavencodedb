@@ -28,5 +28,5 @@
       "hooks/*": ["./src/hooks/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "src/__test__"]
 }
