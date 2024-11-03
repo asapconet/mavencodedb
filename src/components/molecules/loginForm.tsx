@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CSpinner } from "@coreui/react";
 import { FaApple } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -28,12 +27,10 @@ export const LoginForm = () => {
 
     if (validUser) {
       setLoading(true);
-
       await useTimer();
       login({ username: data.email, password: data.password });
       setLoading(false);
       navigate("/dashboard");
-      console.log(data, "User logged in successfully!");
     } else {
       console.error("Invalid credentials");
     }
