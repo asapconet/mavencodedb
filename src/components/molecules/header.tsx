@@ -22,10 +22,14 @@ export const Header = () => {
         <span> tabler</span>
       </div>
       <div className="hidden md:flex items-center gap-4">
-        <span className="border-pri border-2 py-1 px-2 text-md rounded-sm font-semibold text-pri cursor-pointer">
-          {" "}
+        <a
+          href="https://github.com/asapconet/mavencodedb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-pri border-2 py-1 px-2 text-md rounded-sm font-semibold text-pri cursor-pointer"
+        >
           Source code
-        </span>
+        </a>
         <span className="relative p-1">
           <div className="p-1 rounded-full bg-err absolute top-0 right-0" />
           <BsBell size={20} className="cursor-pointer" />
