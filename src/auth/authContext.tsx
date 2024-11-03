@@ -1,7 +1,7 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useEffect } from "react";
 import { AuthContextType } from "../types/auth";
 import { useRecoilState } from "recoil";
-import { authState } from "components/atoms/recoil/login";
+import { authState, AuthUser } from "components/atoms/recoil/login";
 
 interface IProps {
   children: React.ReactNode;
@@ -18,18 +18,34 @@ const AuthContext = createContext<AuthContextType>(defaultAuthContext);
 export const AuthProvider: React.FC<IProps> = ({ children }) => {
   const [auth, setAuth] = useRecoilState(authState);
 
-  const login = () => {
-    setAuth({
+  useEffect(() => {
+    const storedAuth = localStorage.getItem("authState");
+    if (storedAuth) {
+      setAuth(JSON.parse(storedAuth));
+    }
+  }, [setAuth]);
+
+  useEffect(() => {
+    localStorage.setItem("authState", JSON.stringify(auth));
+  }, [auth]);
+
+  
+  const login = ({ username, password }: AuthUser) => {
+    const userData = {
       isAuthenticated: true,
-      user: { username: "aaronrickymeek@gmail.com" },
-    });
+      user: { username, password },
+    };
+    setAuth(userData);
+    localStorage.setItem("authState", JSON.stringify(userData));
   };
 
   const logout = () => {
-    setAuth({
+    const logoutData = {
       isAuthenticated: false,
       user: null,
-    });
+    };
+    setAuth(logoutData);
+    localStorage.removeItem("authState");
   };
 
   return (

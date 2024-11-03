@@ -1,9 +1,11 @@
+import { AuthUser } from "components/atoms/recoil/login";
+
 export type AuthContextType = {
   isAuthenticated: boolean;
-  login: () => void;
+  login: (user: AuthUser) => void;
   logout: () => void;
   user?: { username: string } | null;
-}
+};
 
 export type LoginFormValues = {
   email: string;

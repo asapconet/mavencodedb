@@ -1,12 +1,15 @@
+import { useState } from "react";
+import { CSpinner } from "@coreui/react";
+import { FaApple } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { joiResolver } from "@hookform/resolvers/joi";
-import { useRecoilState } from "recoil";
 import { McButton } from "components/atoms/button/buttons";
 import McInput from "components/atoms/input/inputs";
-import { FaApple } from "react-icons/fa6";
-import { authState } from "components/atoms/recoil/login";
 import { LoginFormValues } from "../../types/auth";
 import { loginSchema } from "../../schemas/login";
+import { useAuth } from "../../auth/authContext";
+import { useTimer } from "../../utils/fakeLoader";
 
 export const LoginForm = () => {
   const {
@@ -16,19 +19,20 @@ export const LoginForm = () => {
   } = useForm<LoginFormValues>({
     resolver: joiResolver(loginSchema),
   });
-  const [_, setAuth] = useRecoilState(authState);
+  const navigate = useNavigate();
+  const { login } = useAuth();
+  const [loading, setLoading] = useState(false);
 
-  console.log("all errors here!:", errors);
-  const onSubmit = (data: LoginFormValues) => {
-    const validUser =
-      data.email !== "" && data.password !== "";
+  const onSubmit = async (data: LoginFormValues) => {
+    const validUser = data.email !== "" && data.password !== "";
 
-    console.log(data);
     if (validUser) {
-      setAuth({
-        isAuthenticated: true,
-        user: { username: data.email },
-      });
+      setLoading(true);
+
+      await useTimer();
+      login({ username: data.email, password: data.password });
+      setLoading(false);
+      navigate("/dashboard");
       console.log(data, "User logged in successfully!");
     } else {
       console.error("Invalid credentials");
@@ -63,7 +67,7 @@ export const LoginForm = () => {
         </label>
         <p className="cursor-pointer">Forgot password?</p>
       </div>
-      <McButton type="submit">Login</McButton>
+      <McButton type="submit">{loading ? "Wait a min..." : "Login"}</McButton>
       <McButton
         to="/register"
         type="button"
