@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { AuthContextType } from "../types/auth";
-import { authState, AuthUser } from "store/recoil/login";
+import { authState, AuthUser } from "components/atoms/recoil/login";
 
 interface IProps {
   children: React.ReactNode;
@@ -29,7 +29,6 @@ export const AuthProvider: React.FC<IProps> = ({ children }) => {
     localStorage.setItem("authState", JSON.stringify(auth));
   }, [auth]);
 
-  
   const login = ({ username, password }: AuthUser) => {
     const userData = {
       isAuthenticated: true,
