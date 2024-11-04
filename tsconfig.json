@@ -32,8 +32,8 @@
     "paths": {
       "app/*": ["./src/app/*"],
       "components/*": ["./src/components/*"],
-      "hooks/*": ["./src/hooks/*"]
+      "store/*": ["./store/*"]
     }
   },
-  "include": ["src", "./src/__test__/components"]
+  "include": ["src", "./src/__test__/components", "store/recoil"]
 }

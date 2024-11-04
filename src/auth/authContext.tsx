@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect } from "react";
-import { AuthContextType } from "../types/auth";
 import { useRecoilState } from "recoil";
-import { authState, AuthUser } from "components/atoms/recoil/login";
+import { AuthContextType } from "../types/auth";
+import { authState, AuthUser } from "store/recoil/login";
 
 interface IProps {
   children: React.ReactNode;

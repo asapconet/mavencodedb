@@ -11,6 +11,7 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: {
     "^components/(.*)$": "<rootDir>/src/components/$1",
+    "^store/(.*)$": "<rootDir>/store/$1",
   },
 };
 
