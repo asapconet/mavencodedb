@@ -3,7 +3,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        loginBg: `url("src/assets/rightSide.png")`,
+        loginBg: `url("/rightSide.png")`,
       },
       colors: {
         pri: "#60a5fa",

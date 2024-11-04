@@ -1,4 +1,4 @@
-import { RegisterOptions, UseFormRegister } from "react-hook-form";
+import { UseFormRegister } from "react-hook-form";
 
 export interface InputType {
   textarea?: boolean;
@@ -10,7 +10,7 @@ export interface InputType {
   type?: string;
   placeholder?: string;
   className?: string;
-  register?: UseFormRegister<any>; 
+  register?: UseFormRegister<any>;
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
