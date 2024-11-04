@@ -1,5 +1,5 @@
-import { Table, Avatar } from "@chakra-ui/react";
 import { FaTrash } from "react-icons/fa6";
+import { Table, Avatar } from "@chakra-ui/react";
 import { tableData } from "../../../data/table";
 
 export const Tables = () => {
@@ -40,7 +40,7 @@ export const Tables = () => {
             <Table.Cell>{item.commit}</Table.Cell>
             <Table.Cell>{item.date}</Table.Cell>
             <Table.Cell>
-              <FaTrash color="#9ca3af" />
+              <FaTrash color="#9ca3af" data-testid="trash-icon" />
             </Table.Cell>
           </Table.Row>
         ))}

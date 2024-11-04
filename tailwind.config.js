@@ -1,13 +1,9 @@
 export default {
-  content: [
-    "./src/**/*.scss",
-    "./src/**/*.{js,ts,jsx,tsx,mdx,png}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx,png}",
-  ],
+  content: ["./src/**/*.scss", "./src/**/*.{js,ts,jsx,tsx,mdx,png}"],
   theme: {
     extend: {
       backgroundImage: {
-        loginBg: `url("./src/assets/rightSide.png")`,
+        loginBg: `url("src/assets/rightSide.png")`,
       },
       colors: {
         pri: "#60a5fa",

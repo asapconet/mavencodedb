@@ -10,7 +10,7 @@ const config: Config.InitialOptions = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   moduleNameMapper: {
-    "^components/(.*)$": "<rootDir>/src/__test__/$1",
+    "^components/(.*)$": "<rootDir>/src/components/$1",
   },
 };
 

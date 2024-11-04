@@ -1,12 +1,6 @@
 import { forwardRef } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
-
-export interface CardProps {
-  title: string;
-  description: string;
-  growthRate: number;
-  className?: string;
-}
+import { CardProps } from "src/types/card";
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ title, description, growthRate, className, ...rest }, ref) => {
@@ -33,9 +27,12 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
               {isPositiveGrowth ? "+" : "-"} {Math.abs(growthRate)}%
             </span>
             {isPositiveGrowth ? (
-              <FaAngleUp className="text-green-500" />
+              <FaAngleUp
+                className="text-green-500"
+                data-testid="positive-icon"
+              />
             ) : (
-              <FaAngleDown className="text-err" />
+              <FaAngleDown className="text-err" data-testid="negative-icon" />
             )}
           </div>
         </div>
