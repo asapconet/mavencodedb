@@ -9,7 +9,7 @@ export const Login = () => {
           <h1 className="text-2xl md:text-5xl font-bold text-nue-2">
             Welcome to MavenCode
           </h1>
-          <p className="text-2xl text-neu-1">Kindly login your details</p>
+          <p className="text-2xl text-neu-1">Kindly enter your details</p>
           <LoginForm />
         </div>
       </div>

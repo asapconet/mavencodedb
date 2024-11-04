@@ -2,6 +2,9 @@
 
 Mavencodebd is an app templete built with React, Vite, TypeScript, and Tailwind CSS.
 
+
+#### figma designs[login]: https://www.figma.com/design/xHP6FKrJs932pnYWCDiXyN/Login-Page-(Community)?node-id=2-6&node-type=frame&t=mkA4gmTpr05BkBfO-0  
+
 ## Table of Contents
 
 - [Mavencodebd](#mavencodebd)
@@ -16,13 +19,15 @@ Mavencodebd is an app templete built with React, Vite, TypeScript, and Tailwind 
 ## Features
 
 - ⚡️ **React**: A popular JavaScript library for building user interfaces.
-- 🚀 **Vite**: A fast build tool and development server for modern web projects.
-- 🦾 **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript, enhancing code quality.
-- 🎨 **Tailwind CSS**: A utility-first CSS framework for building custom designs quickly.
-- 💄 **ESLint & Prettier**: Code quality and formatting tools to maintain consistency across the codebase.
-- 🚨 **React Hook Form**: Easy-to-use form handling with built-in validation.
-- 🌐 **Recoil**: A state management library for React applications.
-
+- 🚀 **Vite**: A fast, modern build tool and development server.
+- 🦾 **TypeScript**: A strongly typed superset of JavaScript for improved code quality.
+- 🎨 **Tailwind CSS**: A utility-first CSS framework for fast custom styling.
+- 💄 **ESLint & Prettier**: Tools for consistent code style and formatting.
+- 🚨 **React Hook Form**: Provides easy form management with built-in validation.
+- 🌐 **Recoil**: A state management library designed for React applications.
+- 📈 **CoreUI**: Ready-to-use components for building admin dashboards.
+- ✨ **Framer Motion**: Animation library for a smooth user experience.
+- 🧪 **Testing**: Includes Jest and Testing Library for reliable component testing.
 ## Installation
 
 To get started with the project, clone the repository and install the dependencies:
@@ -47,6 +52,8 @@ Here are the available scripts you can run:
 - **`build`**: Build the application for production.
 - **`lint`**: Lint the project using ESLint.
 - **`preview`**: Preview the production build.
+- **`test`:** Runs Jest for unit tests.
+- **`test:watch`:** Runs Jest in watch mode for continuous testing.
 
 ## Dependencies
 
@@ -58,7 +65,11 @@ This project includes the following key dependencies:
 - **`framer-motion`**: A popular library for animations in React.
 - **`joi`**: A powerful schema description language and data validator for JavaScript.
 - **`CoreUI`**: A set of components for building admin dashboards.
+- **`sass:`**:  CSS preprocessor for styling.
+- **`joi: Schema`** description and data validation.
+- **`react-hook-form:`** Form management library.
+- **`react-icons:`** Collection of popular icons.
 
 # Thank you for showing up here
 
-Feel free to give a star to the project
+Thank you for checking out Mavencodebd! Feel free to give a star on GitHub if you found this project helpful. Visit the live site at https://mavencodedb.vercel.app/.
