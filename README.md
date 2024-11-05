@@ -2,12 +2,11 @@
 
 Mavencodebd is an app templete built with React, Vite, TypeScript, and Tailwind CSS.
 
-
-#### figma designs[login]: https://www.figma.com/design/xHP6FKrJs932pnYWCDiXyN/Login-Page-(Community)?node-id=2-6&node-type=frame&t=mkA4gmTpr05BkBfO-0  
+#### figma designs[login]: https://www.figma.com/design/xHP6FKrJs932pnYWCDiXyN/Login-Page-(Community)?node-id=2-6&node-type=frame&t=mkA4gmTpr05BkBfO-0
 
 ## Table of Contents
 
-- [Mavencodebd](#mavencodebd)
+- [Mavencodebd](#mavencodebd) - [figma designs\[login\]: https://www.figma.com/design/xHP6FKrJs932pnYWCDiXyN/Login-Page-(Community)?node-id=2-6\&node-type=frame\&t=mkA4gmTpr05BkBfO-0](#figma-designslogin-httpswwwfigmacomdesignxhp6fkrjs932pnywcdixynlogin-page-communitynode-id2-6node-typeframetmka4gmtpr05bkbfo-0)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
@@ -28,6 +27,7 @@ Mavencodebd is an app templete built with React, Vite, TypeScript, and Tailwind 
 - 📈 **CoreUI**: Ready-to-use components for building admin dashboards.
 - ✨ **Framer Motion**: Animation library for a smooth user experience.
 - 🧪 **Testing**: Includes Jest and Testing Library for reliable component testing.
+
 ## Installation
 
 To get started with the project, clone the repository and install the dependencies:
@@ -44,6 +44,19 @@ yarn install
 yarn dev
 ```
 
+1. Login in your approperiate details on the login page
+   **NB** information could be anything as it doesn't save to any data base on backend/cloud platform, just ensure it is within the right format
+
+![login](./public/login.png)
+
+2. After successful login, should you want to logout. Click the avatar on the top right conner of the dashboard  
+   ![dashboad](./public/dashboard.png)
+
+3. Logout a modal will show and you can successfully logout by accepting with yes.
+   ![logout](./public/logout.png)
+
+**NB** Login out will erase your login information will require you adding it afresh before login in again
+
 ## Scripts
 
 Here are the available scripts you can run:
@@ -55,6 +68,12 @@ Here are the available scripts you can run:
 - **`test`:** Runs Jest for unit tests.
 - **`test:watch`:** Runs Jest in watch mode for continuous testing.
 
+## Running test
+```bash 
+yarn test --watch
+```
+![tests](./public/Pasted%20image.png)
+
 ## Dependencies
 
 This project includes the following key dependencies:
@@ -65,7 +84,7 @@ This project includes the following key dependencies:
 - **`framer-motion`**: A popular library for animations in React.
 - **`joi`**: A powerful schema description language and data validator for JavaScript.
 - **`CoreUI`**: A set of components for building admin dashboards.
-- **`sass:`**:  CSS preprocessor for styling.
+- **`sass:`**: CSS preprocessor for styling.
 - **`joi: Schema`** description and data validation.
 - **`react-hook-form:`** Form management library.
 - **`react-icons:`** Collection of popular icons.

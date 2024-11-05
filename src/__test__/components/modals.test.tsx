@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { LogoutModal } from "components/atoms/modal";
 import { useAuth } from "../../utils/authContext";
 
-jest.mock("../../auth/authContext");
+jest.mock("../../utils/authContext");
 
 describe("LogoutModal component", () => {
   const mockOnClose = jest.fn();

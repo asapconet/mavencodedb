@@ -5,10 +5,10 @@ import { LoginForm } from "components/molecules/loginForm";
 import { useAuth } from "../../../utils/authContext";
 import { useTimer } from "../../../utils/fakeLoader";
 
-jest.mock("../../auth/authContext", () => ({
+jest.mock("../../../utils/authContext", () => ({
   useAuth: jest.fn(),
 }));
-jest.mock("../../utils/fakeLoader", () => ({
+jest.mock("../../../utils/fakeLoader", () => ({
   useTimer: jest.fn().mockResolvedValue(undefined),
 }));
 
