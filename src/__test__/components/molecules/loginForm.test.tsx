@@ -2,8 +2,8 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import { LoginForm } from "components/molecules/loginForm";
-import { useAuth } from "../../auth/authContext";
-import { useTimer } from "../../utils/fakeLoader";
+import { useAuth } from "../../../utils/authContext";
+import { useTimer } from "../../../utils/fakeLoader";
 
 jest.mock("../../auth/authContext", () => ({
   useAuth: jest.fn(),
@@ -57,7 +57,6 @@ describe("LoginForm", () => {
       </BrowserRouter>
     );
 
-    
     fireEvent.change(screen.getByLabelText(/username/i), {
       target: { value: "invalid-email" },
     });

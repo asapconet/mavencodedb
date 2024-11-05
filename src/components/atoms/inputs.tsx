@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { RiSearch2Line } from "react-icons/ri";
 import { CiMail } from "react-icons/ci";
-import { InputType } from "../../../types/input";
+import { InputType } from "../../types/input";
 
 const McInput = ({
   textarea,

@@ -1,4 +1,4 @@
-import { AuthUser } from "components/atoms/recoil/login";
+import { AuthUser } from "src/utils/recoil/login";
 
 export type AuthContextType = {
   isAuthenticated: boolean;

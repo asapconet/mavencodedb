@@ -1,5 +1,4 @@
 import { LoginForm } from "components/molecules/loginForm";
-import "./style.scss";
 
 export const Login = () => {
   return (

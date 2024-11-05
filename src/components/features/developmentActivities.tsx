@@ -1,5 +1,5 @@
 import { LineChart } from "components/atoms/charts/lineChart";
-import { Tables } from "components/atoms/table";
+import { Tables } from "components/table";
 
 export const DevActivities = () => {
   return (

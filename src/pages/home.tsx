@@ -1,8 +1,8 @@
 import Card from "components/organisms/card";
 import { DashboardLayout } from "../layouts/dashboardLayout";
 import { cardData } from "../data/cardData";
-import { DevActivities } from "./features/developmentActivities";
-import { SubCharts } from "./features/subCharts/indexs";
+import { DevActivities } from "../components/features/developmentActivities";
+import { SubCharts } from "../components/features/subCharts";
 import { ProtectedRoute } from "../routes";
 
 function Home() {

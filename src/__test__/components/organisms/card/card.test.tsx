@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Card from "../../components/organisms/card";
+import Card from "../../../../components/organisms/card";
 import { CardProps } from "src/types/card";
 
 describe("Card component", () => {

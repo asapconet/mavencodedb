@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { McButton } from "components/atoms/button/buttons";
+import { McButton } from "components/atoms/buttons";
 
 describe("McButton", () => {
   test("renders a button with default props", () => {

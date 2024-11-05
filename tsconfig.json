@@ -30,7 +30,7 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "app/*": ["./src/app/*"],
+      "app/*": ["src/pages/*"],
       "components/*": ["./src/components/*"],
       "hooks/*": ["./src/hooks/*"],
       "store/*": ["./src/store/*"]

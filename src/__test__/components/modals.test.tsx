@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { LogoutModal } from "components/atoms/modal";
-import { useAuth } from "../../auth/authContext";
+import { useAuth } from "../../utils/authContext";
 
 jest.mock("../../auth/authContext");
 

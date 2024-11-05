@@ -3,11 +3,11 @@ import { FaApple } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { joiResolver } from "@hookform/resolvers/joi";
-import { McButton } from "components/atoms/button/buttons";
-import McInput from "components/atoms/input/inputs";
+import { McButton } from "components/atoms/buttons";
+import McInput from "components/atoms/inputs";
 import { LoginFormValues } from "../../types/auth";
 import { loginSchema } from "../../schemas/login";
-import { useAuth } from "../../auth/authContext";
+import { useAuth } from "../../utils/authContext";
 import { useTimer } from "../../utils/fakeLoader";
 
 export const LoginForm = () => {

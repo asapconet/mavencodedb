@@ -1,6 +1,6 @@
 import { FaTrash } from "react-icons/fa6";
 import { Table, Avatar } from "@chakra-ui/react";
-import { tableData } from "../../../data/table";
+import { tableData } from "../data/table";
 
 export const Tables = () => {
   return (
