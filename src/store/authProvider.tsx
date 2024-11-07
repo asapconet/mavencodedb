@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginRequest, logoutRequest } from "./authSlice";
+import { loginRequest, logoutRequest } from "./modules/auth/authSlice";
 import { RootState } from "./store";
 
 interface AuthContextType {

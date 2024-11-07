@@ -2,8 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import createSagaMiddleware from "redux-saga";
-import authReducer from "../authSlice";
-import { authSaga } from "../authSaga";
+import authReducer from "./modules/auth/authSlice";
+import { authSaga } from "./modules/auth/authSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 

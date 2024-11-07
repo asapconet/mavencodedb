@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { useAuth } from "../../utils/redux/authProvider";
+import { useAuth } from "../../store/authProvider";
 
 interface IProps {
   isOpen: boolean;

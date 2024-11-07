@@ -1,5 +1,4 @@
-import { AuthUser } from "src/utils/redux/authSlice";
-
+import { AuthUser } from "store/modules/auth/authSlice";
 
 export type AuthContextType = {
   isAuthenticated: boolean;
