@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "./utils/authContext";
+import { useAuth } from "./utils/redux/authProvider";
 
 interface IProps {
   children: React.ReactNode;

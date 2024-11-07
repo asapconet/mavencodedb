@@ -1,4 +1,5 @@
-import { AuthUser } from "src/utils/recoil/login";
+import { AuthUser } from "src/utils/redux/authSlice";
+
 
 export type AuthContextType = {
   isAuthenticated: boolean;

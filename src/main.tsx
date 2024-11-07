@@ -3,14 +3,15 @@ import ReactDOM from "react-dom/client";
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 import "./index.scss";
 import App from "./App";
-import { RecoilRoot } from "recoil";
+import store from "./utils/redux/store";
+import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ChakraProvider value={defaultSystem}>
-      <RecoilRoot>
+    <Provider store={store}>
+      <ChakraProvider value={defaultSystem}>
         <App />
-      </RecoilRoot>
-    </ChakraProvider>
+      </ChakraProvider>
+    </Provider>
   </React.StrictMode>
 );

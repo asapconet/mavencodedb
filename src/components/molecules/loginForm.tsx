@@ -7,7 +7,7 @@ import { McButton } from "components/atoms/buttons";
 import McInput from "components/atoms/inputs";
 import { LoginFormValues } from "../../types/auth";
 import { loginSchema } from "../../schemas/login";
-import { useAuth } from "../../utils/authContext";
+import { useAuth } from "../../utils/redux/authProvider";
 import { useTimer } from "../../utils/fakeLoader";
 
 export const LoginForm = () => {
