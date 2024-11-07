@@ -1,25 +1,57 @@
 import { render, screen } from "@testing-library/react";
+import { useDispatch, useSelector } from "react-redux";
 import "@testing-library/jest-dom";
-import { LineChart } from "components/atoms/charts/lineChart";
+import { getDashboardData } from "../../modules/dashboard/dataSlice";
+import { LineChart } from "../../components/atoms/charts/lineChart";
 
-jest.mock("@coreui/react-chartjs", () => {
-  return {
-    CChart: jest.fn(() => <canvas data-testid="mock-cchart" />),
+jest.mock("react-redux", () => ({
+  useDispatch: jest.fn(),
+  useSelector: jest.fn(),
+}));
+
+const mockCChart = jest.fn();
+jest.mock("@coreui/react-chartjs", () => ({
+  CChart: (props: any) => {
+    mockCChart(props);
+    return <div data-testid="CChart" />;
+  },
+}));
+
+describe("LineChart Component", () => {
+  const mockDispatch = jest.fn();
+
+  const mockLineChartData = {
+    labels: ["Jan", "Feb", "Mar"],
+    datasets: [{ data: [10, 20, 30] }],
   };
-});
 
-describe("LineChart component", () => {
-  it("renders without crashing", () => {
-    render(<LineChart />);
-
-    const chartContainer = screen.getByTestId("mock-cchart");
-    expect(chartContainer).toBeInTheDocument();
+  beforeEach(() => {
+    (useDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
+    (useSelector as unknown as jest.Mock).mockReturnValue(mockLineChartData);
   });
 
-  it("displays the correct number of data points", () => {
-    render(<LineChart />);
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
-    const canvas = screen.getByTestId("mock-cchart");
-    expect(canvas).toBeInTheDocument();
+  test("dispatches getDashboardData on mount", () => {
+    render(<LineChart />);
+    expect(mockDispatch).toHaveBeenCalledWith(getDashboardData());
+  });
+
+  test("renders CChart with correct data and type", () => {
+    render(<LineChart />);
+    expect(screen.getByTestId("CChart")).toBeInTheDocument();
+
+    expect(mockCChart).toHaveBeenCalledWith(
+      expect.objectContaining({
+        type: "line",
+        data: mockLineChartData,
+        options: expect.objectContaining({
+          responsive: true,
+          maintainAspectRatio: false,
+        }),
+      })
+    );
   });
 });

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CardProps } from "types/card";
-import { chartProps,MutableChartData } from "types/chats";
+import { chartProps, MutableChartData } from "types/chats";
 import { TableDataProps } from "types/table";
 
 export interface DashboardDataState {

@@ -4,7 +4,7 @@ import { chartProps } from "../../../types/chats";
 export const NutPieChart: React.FC<chartProps> = ({
   labels,
   data,
-  type,
+  type = "pie",
   backgroundColor,
 }) => {
   return (
