@@ -1,10 +1,7 @@
-interface CardData {
-  title: string;
-  description: string;
-  growthRate: number;
-}
+import {CardProps}from 'types/card'
 
-export const cardData: CardData[] = [
+
+export const cardData: CardProps[] = [
   { title: "43", description: "new tickets", growthRate: 6 },
   { title: "17", description: "closed today", growthRate: -3 },
   { title: "7", description: "new replies", growthRate: 9 },

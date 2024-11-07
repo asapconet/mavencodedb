@@ -1,11 +1,38 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "components/organisms/card";
 import { DashboardLayout } from "../layouts/dashboardLayout";
-import { cardData } from "../data/cardData";
 import { DevActivities } from "../components/features/developmentActivities";
 import { SubCharts } from "../components/features/subCharts";
 import { ProtectedRoute } from "../routes";
+import {
+  selectCard,
+  selectIsLoading,
+  selectError,
+} from "../modules/dashboard/selectors";
+import { getCardData } from "../modules/dashboard/dataSlice";
+
+// import {
+//   getCardData,
+//   getCardDataSuccess,
+//   getCardDataFailure,
+// } from "../modules/dashboard/dataSlice";
+
 
 function Home() {
+  const dispatch = useDispatch();
+  const cardData = useSelector(selectCard);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(getCardData());
+  }, [dispatch]);
+
+  console.log("card data:", cardData);
+  console.log("isLoading:", isLoading);
+  console.log("isError:", error);
+
   return (
     <ProtectedRoute>
       <main>

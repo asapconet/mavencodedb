@@ -33,7 +33,7 @@
       "app/*": ["src/pages/*"],
       "components/*": ["./src/components/*"],
       "hooks/*": ["./src/hooks/*"],
-      "store/*": ["./src/store/*"]
+      "types/*": ["./src/types/*"]
     }
   },
   "include": ["src", "./src/__test__/components"]
