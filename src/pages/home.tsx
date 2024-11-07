@@ -10,14 +10,7 @@ import {
   selectIsLoading,
   selectError,
 } from "../modules/dashboard/selectors";
-import { getCardData } from "../modules/dashboard/dataSlice";
-
-// import {
-//   getCardData,
-//   getCardDataSuccess,
-//   getCardDataFailure,
-// } from "../modules/dashboard/dataSlice";
-
+import { getDashboardData } from "../modules/dashboard/dataSlice";
 
 function Home() {
   const dispatch = useDispatch();
@@ -26,7 +19,7 @@ function Home() {
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(getCardData());
+    dispatch(getDashboardData());
   }, [dispatch]);
 
   console.log("card data:", cardData);

@@ -13,10 +13,10 @@ export const ChartCard: React.FC<ChartCardProps> = ({ title, chartData }) => (
     </h2>
     <div className="h-[13rem] flex justify-center items-center">
       <NutPieChart
-        data={chartData.data}
-        type={chartData.type}
-        labels={chartData.labels}
-        backgroundColor={chartData.backgroundColor}
+        data={chartData?.data}
+        type={chartData?.type}
+        labels={chartData?.labels}
+        backgroundColor={chartData?.backgroundColor}
       />
     </div>
   </div>
