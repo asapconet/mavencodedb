@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { LogoutModal } from "components/atoms/modal";
-import { useAuth } from "../../store/authProvider";
+import { useAuth } from "../../modules/auth/authProvider";
 
-jest.mock("../../utils/authContext");
+jest.mock("../../modules/auth/authProvider");
 
 describe("LogoutModal component", () => {
   const mockOnClose = jest.fn();

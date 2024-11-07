@@ -4,8 +4,8 @@ import {
   logoutSuccess,
   loginRequest,
   logoutRequest,
-} from "./authSlice";
-import { AuthUser } from "./authSlice";
+} from "./actions";
+import { AuthUser } from "./types";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 function* loginSaga(action: PayloadAction<AuthUser>) {

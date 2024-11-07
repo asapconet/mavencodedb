@@ -2,8 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import createSagaMiddleware from "redux-saga";
-import authReducer from "./modules/auth/authSlice";
-import { authSaga } from "./modules/auth/authSaga";
+import authReducer from "../modules/auth/authSlice";
+import rootSaga from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -24,7 +24,7 @@ const store = configureStore({
     ),
 });
 
-sagaMiddleware.run(authSaga);
+sagaMiddleware.run(rootSaga);
 
 export const persistor = persistStore(store);
 

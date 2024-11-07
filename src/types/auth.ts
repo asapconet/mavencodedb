@@ -1,4 +1,4 @@
-import { AuthUser } from "store/modules/auth/authSlice";
+import { AuthUser } from "src/modules/auth/authSlice";
 
 export type AuthContextType = {
   isAuthenticated: boolean;

@@ -1,11 +1,12 @@
 import React, { createContext, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginRequest, logoutRequest } from "./modules/auth/authSlice";
-import { RootState } from "./store";
+import { loginRequest, logoutRequest } from "./actions";
+import { selectIsAuthenticated } from "./selectors";
+import { AuthUser } from "./types";
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  login: (user: { username: string; password: string }) => void;
+  login: (user: AuthUser) => void;
   logout: () => void;
 }
 
@@ -19,17 +20,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector(
-    (state: RootState) => state.auth.isAuthenticated
-  );
+  const isAuthenticated = useSelector(selectIsAuthenticated);
 
-  const login = (user: { username: string; password: string }) => {
-    dispatch(loginRequest(user));
-  };
-
-  const logout = () => {
-    dispatch(logoutRequest());
-  };
+  const login = (user: AuthUser) => dispatch(loginRequest(user));
+  const logout = () => dispatch(logoutRequest());
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>

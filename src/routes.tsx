@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "./store/authProvider";
+import { useAuth } from "./modules/auth/authProvider";
 
 interface IProps {
   children: React.ReactNode;

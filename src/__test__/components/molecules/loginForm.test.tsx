@@ -2,12 +2,13 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import { LoginForm } from "components/molecules/loginForm";
-import { useAuth } from "../../../store/authProvider";
+import { useAuth } from "../../../modules/auth/authProvider";
 import { useTimer } from "../../../utils/fakeLoader";
 
-jest.mock("../../../utils/authContext", () => ({
+jest.mock("../../../modules/auth/authProvider", () => ({
   useAuth: jest.fn(),
 }));
+
 jest.mock("../../../utils/fakeLoader", () => ({
   useTimer: jest.fn().mockResolvedValue(undefined),
 }));
