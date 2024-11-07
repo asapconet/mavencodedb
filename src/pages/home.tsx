@@ -11,6 +11,7 @@ import {
   selectError,
 } from "../modules/dashboard/selectors";
 import { getDashboardData } from "../modules/dashboard/dataSlice";
+import { Spinner } from "@chakra-ui/react";
 
 function Home() {
   const dispatch = useDispatch();
@@ -44,6 +45,12 @@ function Home() {
                 />
               ))}
             </div>
+            
+
+
+ <Spinner color="teal.500" size="lg" />
+
+
           </div>
           <div className="grid lg:grid-cols-2 gap-8 min-h-96 px-4 lg:px-16 mt-8">
             <DevActivities />

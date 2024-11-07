@@ -1,5 +1,6 @@
+import { tableData } from "./../../data/table";
 import { cardData } from "../../data/cardData";
-import { pieChartData } from "../../data/chartData";
+import { pieChartData, lineChartData } from "../../data/chartData";
 import { put, takeLatest, delay } from "redux-saga/effects";
 import {
   getDashboardData,
@@ -9,8 +10,15 @@ import {
 
 function* getDashboardDataSaga() {
   try {
-    yield delay(3000);
-    yield put(getDashboardDataSuccess({ cardData, pieChartData }));
+    yield delay(1000);
+    yield put(
+      getDashboardDataSuccess({
+        cardData,
+        pieChartData,
+        tableData,
+        lineChartData,
+      })
+    );
   } catch (error) {
     yield put(getDashboardDataFailure("failed to get dashboard data"));
   }

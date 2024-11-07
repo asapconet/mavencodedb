@@ -23,8 +23,6 @@ export const SubCharts: React.FC = () => {
     dispatch(getDashboardData());
   }, [dispatch]);
 
-  console.log(pieChartData);
-
   return (
     <>
       <div className="w-full flex flex-col gap-6 h-fit">

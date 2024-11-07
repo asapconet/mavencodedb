@@ -1,4 +1,4 @@
-import { chartProps } from "../types/chats";
+import { chartProps,MutableChartData } from "../types/chats";
 
 export const pieChartData: chartProps[] = [
   {
@@ -26,3 +26,21 @@ export const pieChartData: chartProps[] = [
     backgroundColor: ["#22c55e", "#a3e635"],
   },
 ];
+
+
+
+export const lineChartData: MutableChartData<"line"> = {
+  labels: ["", "", "", "", "", "", "", "", "", ""],
+  datasets: [
+    {
+      backgroundColor: "#dbeafe",
+      borderColor: "#60a5fa",
+      pointBackgroundColor: "transparent",
+      pointBorderColor: "transparent",
+      fill: true,
+      data: [0, 0, 2, 4, 3, 1, 6, 8, 10, 9],
+    },
+  ],
+};
+
+

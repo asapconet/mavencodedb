@@ -1,23 +1,22 @@
+import { useEffect } from "react";
 import { CChart } from "@coreui/react-chartjs";
+import { useDispatch, useSelector } from "react-redux";
+import { getDashboardData } from "../../../modules/dashboard/dataSlice";
+import { selectLineChartData } from "../../../modules/dashboard/selectors";
 
 export const LineChart: React.FC = () => {
+  const dispatch = useDispatch();
+  const lineChartData = useSelector(selectLineChartData);
+
+  useEffect(() => {
+    dispatch(getDashboardData());
+  }, [dispatch]);
+
   return (
     <div className="w-full h-[250px]">
       <CChart
         type="line"
-        data={{
-          labels: ["", "", "", "", "", "", "", "", "", ""],
-          datasets: [
-            {
-              backgroundColor: "#dbeafe",
-              borderColor: "#60a5fa",
-              pointBackgroundColor: "transparent",
-              pointBorderColor: "transparent",
-              fill: true,
-              data: [0, 0, 2, 4, 3, 1, 6, 8, 10, 9],
-            },
-          ],
-        }}
+        data={lineChartData}
         options={{
           responsive: true,
           maintainAspectRatio: false,

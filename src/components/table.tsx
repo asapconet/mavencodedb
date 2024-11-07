@@ -1,8 +1,18 @@
+import { useEffect } from "react";
 import { FaTrash } from "react-icons/fa6";
 import { Table, Avatar } from "@chakra-ui/react";
-import { tableData } from "../data/table";
+import { useDispatch, useSelector } from "react-redux";
+import { getDashboardData } from "../modules/dashboard/dataSlice";
+import { selectTableData } from "../modules/dashboard/selectors";
 
 export const Tables = () => {
+  const dispatch = useDispatch();
+  const tableData = useSelector(selectTableData);
+
+  useEffect(() => {
+    dispatch(getDashboardData());
+  }, [dispatch]);
+
   return (
     <Table.Root size="sm" striped>
       <Table.ColumnGroup>
@@ -48,4 +58,3 @@ export const Tables = () => {
     </Table.Root>
   );
 };
-
