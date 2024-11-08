@@ -2,10 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ChartCard } from "components/organisms/card/chartCard";
 import { getDashboardData } from "../../modules/dashboard/dataSlice";
-import {
-  selectPieChartData,
-  selectIsLoading,
-} from "../../modules/dashboard/selectors";
+import { selectPieChartData } from "../../modules/dashboard/selectors";
 
 export const SubCharts: React.FC = () => {
   const chartTitles = [
@@ -17,7 +14,6 @@ export const SubCharts: React.FC = () => {
 
   const dispatch = useDispatch();
   const pieChartData = useSelector(selectPieChartData);
-  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     dispatch(getDashboardData());
@@ -31,19 +27,16 @@ export const SubCharts: React.FC = () => {
       >
         <b>Read our documentation</b> with code samples
       </span>
-      {isLoading ? (
-        <div className="text-center font-semibold py-10">Loading...</div>
-      ) : (
-        <div className="grid lg:grid-cols-2 gap-8 overflow-auto scrollbar-hide">
-          {chartTitles.map((title, index) => (
-            <ChartCard
-              key={title}
-              title={title}
-              chartData={pieChartData[index]}
-            />
-          ))}
-        </div>
-      )}
+
+      <div className="grid lg:grid-cols-2 gap-8 overflow-auto scrollbar-hide">
+        {chartTitles.map((title, index) => (
+          <ChartCard
+            key={title}
+            title={title}
+            chartData={pieChartData[index]}
+          />
+        ))}
+      </div>
     </div>
   );
 };

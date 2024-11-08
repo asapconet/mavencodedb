@@ -7,6 +7,7 @@ import { selectLineChartData } from "../../../modules/dashboard/selectors";
 export const LineChart: React.FC = () => {
   const dispatch = useDispatch();
   const lineChartData = useSelector(selectLineChartData);
+  
 
   useEffect(() => {
     dispatch(getDashboardData());
