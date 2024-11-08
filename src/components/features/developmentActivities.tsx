@@ -10,7 +10,7 @@ export const DevActivities = () => {
       <div className="h-[16rem] -m-[6px] mt-2">
         <LineChart />
       </div>
-      <div className="min-h-[10rem] ">
+      <div className="min-h-[10rem]">
         <Tables />
       </div>
     </div>
